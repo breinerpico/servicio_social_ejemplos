@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Login Supervisor</title>
   <style>
     body {
@@ -79,8 +79,8 @@
 </head>
 <body>
   <div class="login-box">
-    <h1>Login Administrador</h1>
-    <form action="loguearse_suervisor.php" method="POST">
+    <h1>Login supervisor</h1>
+    <form action="loguearse_supervisor.php" method="POST">
       <label for="supervisor_correo">Correo electrónico</label>
       <input type="email" name="correo" id="supervisor" required>
 

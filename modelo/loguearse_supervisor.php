@@ -22,7 +22,7 @@ ini_set('display_errors','1');
     {
         $_SESSION['username'] = $usuario;
         //redirigir el usuario a su pagina
-        header("location: ../pagina_administrador.php");
+        header("location: ../pagina_supervisor.php");
 
         /*echo "El usuario existe en la BD <br>";
         echo $resultado ['email'];*/

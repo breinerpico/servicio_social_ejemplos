@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Servicio Social - Inicio</title>
   <style>
     body {
@@ -82,13 +82,16 @@
   <!-- Barra superior -->
   <div class="navbar">
     <a href="#presentacion">
-      <img src="img/info.png" alt="Admin"> presentación
+      <img src="img/" alt=""> presentación
     </a>
     <a href="#objetivos">
-      <img src="img/acudiente.png" alt="Acudiente"> Objetivos
+      <img src="img/" alt=""> Objetivos
     </a>
-    <a href="#">
-      <img src="img/estudiante.png" alt="Estudiante"> 
+    <a href="#justificacion">
+      <img src="img/" alt=""> justificacion
+    </a>
+    <a href="#requisitos">
+      <img src="img/" alt=""> requisitos
     </a>
 
     <a href="inicio_sesion.php">
@@ -100,21 +103,20 @@
   <div class="contenido">
     <h1>Bienvenido a Servicio Social</h1>
     <p>
-      Usa el menú superior para navegar entre las secciones.  
-      Los apartados de <b>Misión</b>, <b>Visión</b> y <b>Reglamento</b> están en esta misma página.
+      use el menu superior donde estaran diferentes secciones donde cada una nos dara un poco de información acerca del servisio social
     </p>
 
     <!-- Secciones de información -->
     <div id="presentacion" class="seccion">
       <h2>Presentación</h2>
       <p>
-El servicio social estudiantil es una herramienta de trabajo practico que por ley, se usa
-para acercar a los estudiantes con la comunidad en trabajos de “Aprovechamiento del
-tiempo libre, alfabetización, iniciativas ecológicas, eventos deportivos, la promoción y
-preservación de la salud, la educación ciudadana, la organización de grupos juveniles
-y de preservación de factores socialmente relevantes, la recreación dirigida, el
-fomento de actividades físicas, practicas e intelectuales y otros que la institución
-educativa considere pertinentes para el desempeño institucional”.
+        El servicio social estudiantil es una herramienta de trabajo practico que por ley, se usa
+        para acercar a los estudiantes con la comunidad en trabajos de “Aprovechamiento del
+        tiempo libre, alfabetización, iniciativas ecológicas, eventos deportivos, la promoción y
+        preservación de la salud, la educación ciudadana, la organización de grupos juveniles
+        y de preservación de factores socialmente relevantes, la recreación dirigida, el
+        fomento de actividades físicas, practicas e intelectuales y otros que la institución
+        educativa considere pertinentes para el desempeño institucional”.
       </p>
     </div>
 
@@ -139,22 +141,50 @@ educativa considere pertinentes para el desempeño institucional”.
         juveniles y de preservación de factores socialmente relevantes, la recreación dirigida,
         el fomento de actividades físicas, practicas e intelectuales y otros que la institución
         educativa considere pertinentes para el desempeño institucional.
-        Desarrollar en los educandos compromisos sociales con la comunidad con el fin
+        <br>
+        𖣔Desarrollar en los educandos compromisos sociales con la comunidad con el fin
         de mejorar las condiciones del entorno y aumentar la responsabilidad que se debe
         adquirir frente a un trabajo de tipo social.
-        Crear espacios de proyección a la comunidad que permitan a los estudiantes el
+        <br>
+        𖣔Crear espacios de proyección a la comunidad que permitan a los estudiantes el
         contacto directo con la realidad que viven las familias de su entorno.
-        Fortalecer en los estudiantes los valores institucionales como: la responsabilidad,
+        <br>
+        𖣔Fortalecer en los estudiantes los valores institucionales como: la responsabilidad,
         respeto, compromiso, libertad, honestidad, solidaridad, justicia, pluralismo,
-        convivencia y tolerancia.Fomentar valores de solidaridad y compromiso en los estudiantes frente a los
+        convivencia y tolerancia.
+        <br>
+        𖣔Fomentar valores de solidaridad y compromiso en los estudiantes frente a los
         problemas y necesidades de su comunidad en relación a actividades formativas fuera
         del contexto escolar y familiar.</p>
     </div>
 
-    <div id="reglamento" class="seccion">
-      <h2></h2>
-      <p>
-      </p>
+    <div id="justificacion" class="seccion">
+      <h2>justificacion</h2>
+      <p>El proyecto de Servicio Social Estudiantil es obligatorio y debe ser realizado por todo 
+        estudiante para poder cumplir con lo exigido por la ley para ser proclamado bachiller,
+        este debe ser un proyecto institucional, ajustado al trabajo comunitario social, el cual
+        pretende formar de una manera integral a los estudiantes de la media,
+        comprometiéndolos con el trabajo social y la ayuda a la comunidad educativa con
+        diferentes proyectos, la formulación y ejecución del Proyecto de Servicio Social en la
+        Institución Educativa Colegio Nuestra Señora del Rosario, hace parte de la propuesta
+        de formación integral de los jóvenes que cursan los grados décimo y undécimo.</p>
+    </div>
+
+        <div id="requisitos" class="seccion">
+      <h2>requisitos para el servicio social</h2>
+      <p>Los siguientes son requisitos mínimos establecidos por la institución educativa
+        Colegio Nuestra Señora del Rosario que deben cumplir los estudiantes de la media
+        académica para prestar el Servicio Social Estudiantil durante el año lectivo:
+        <br>
+        𖣔Estar legalmente matriculado en la institución educativa y registrado en el
+        Sistema de matrículas (SIMAT).
+        <br>
+        𖣔Estar cursando el grado 10 u 11 para poder desarrollar su Servicio Social
+        Estudiantil.
+        <br>
+        𖣔Inscribirse en los programas de Servicio Social previamente aprobados por los
+        órganos competentes ya sea dentro o fuera de ella. Para ello deberán realizar los
+        trámites administrativos establecidos por la Rectoría de la Institución.</p>
     </div>
   </div>
 

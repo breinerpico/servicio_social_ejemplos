@@ -22,8 +22,8 @@ if(isset($_SESSION['username'])) {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Panel Administrador</title>
   <style>
     body {
@@ -102,9 +102,9 @@ if(isset($_SESSION['username'])) {
   <!-- Sidebar -->
   <div class="sidebar">
     <h2>Menú Admin</h2>
-    <a href="gestionar_estudientes.php">Gestionar Estudiantes</a>
+    <a href="gestionar_estudiante.php">Gestionar Estudiantes</a>
     <a href="gestionar_acudientes.php">Gestionar Acudientes</a>
-    <a href="gestionar_administradores.php">Gestionar Administradores</a>
+    <a href="gestionar_adminitradores.php">Gestionar Administradores</a>
     <a href="gestionar_supervisores.php">Gestionar Supervisores</a>
     <a href="gestionar_grupos.php">Gestionar Grupos</a>
     <a href="#">Soporte PDF</a>
