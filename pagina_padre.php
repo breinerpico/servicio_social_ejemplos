@@ -1,35 +1,16 @@
 <?php
 error_reporting(E_ALL);
-ini_set('display_errors','1');
-session_start();
-require 'modelo/conexion.php';
-
-
-    if(isset($_SESSION['username']))
-    {
-        $nombre_usuario = $_SESSION['username'];
-        
-        // Obtener datos del acudiente
-        $query = "SELECT nombre, apellidos FROM acudiente WHERE correo = '$nombre_usuario'";
-        $resultado = mysqli_query($conexion, $query);
-        $datos = mysqli_fetch_array($resultado);
-    }
-    else
-    {
-        // Si no hay sesión, redirigir al index
-        header("location: index.php");
-    }
-?>
-
-<?php
-error_reporting(E_ALL);
 ini_set('display_errors', '1');
-session_start();
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+require_once 'modelo/conexion.php';
 
 // Verificar si hay sesión iniciada
 if (isset($_SESSION['username'])) {
     $nombre_usuario = $_SESSION['username'];
-    require 'modelo/conexion.php';
 
     // Obtener datos del acudiente
     $query = "SELECT nombre, apellidos FROM acudiente WHERE correo = '$nombre_usuario'";
@@ -44,7 +25,7 @@ if (isset($_SESSION['username'])) {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Portal Acudientes</title>
     <style>
@@ -54,14 +35,17 @@ if (isset($_SESSION['username'])) {
             background: #f4f6f9;
         }
 
-        /* Barra superior */
+        /* Barra superior fija */
         .navbar {
             display: flex;
             justify-content: space-around;
+            align-items: center;
             background: #2c3e50;
             padding: 15px;
-            position: sticky;
+            position: fixed; /* fijo arriba */
             top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
         }
 
@@ -82,10 +66,10 @@ if (isset($_SESSION['username'])) {
             background: #e74c3c;
         }
 
-        /* Contenido */
+        /* Contenido inferior */
         .container {
             max-width: 900px;
-            margin: 30px auto;
+            margin: 100px auto 30px auto; /* espacio para el menú */
             padding: 20px;
         }
 
@@ -95,6 +79,7 @@ if (isset($_SESSION['username'])) {
             border-radius: 10px;
             box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .info {
@@ -110,15 +95,16 @@ if (isset($_SESSION['username'])) {
 </head>
 <body>
 
-    <!-- Menú superior -->
+    <!-- Menú superior fijo -->
     <div class="navbar">
         <a href="#">Inicio</a>
         <a href="#">Progreso de mi hijo</a>
         <a href="#">Horas de Servicio</a>
-        <a href="modelo/cerrar_secion.php" class="logout">Cerrar Sesión</a>
+        <a href="modelo/cerrar_sesion.php" class="logout">Cerrar Sesión</a>
+
     </div>
 
-    <!-- Contenido -->
+    <!-- Contenido en la parte inferior -->
     <div class="container">
         <div class="welcome">
             <?php
@@ -138,7 +124,7 @@ if (isset($_SESSION['username'])) {
                 <li>Revisar las horas de servicio realizadas.</li>
                 <li>Mantenerte informado sobre el estado de sus actividades escolares.</li>
             </ul>
-            <p><strong>Consejo:</strong> Usa los botones superiores para navegar fácilmente.</p>
+            <p><strong>Consejo:</strong> Usa el menú superior para navegar fácilmente.</p>
         </div>
     </div>
 

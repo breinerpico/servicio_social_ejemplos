@@ -108,7 +108,8 @@ if(isset($_SESSION['username'])) {
     <a href="gestionar_supervisores.php">Gestionar Supervisores</a>
     <a href="gestionar_grupos.php">Gestionar Grupos</a>
     <a href="#">Soporte PDF</a>
-    <a href="modelo/cerrar_secion.php" class="logout">Cerrar Sesión</a>
+    <a href="modelo/inicio_sesion.php" class="logout">Cerrar Sesión</a>
+
   </div>
 
   <!-- Contenido principal -->

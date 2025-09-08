@@ -235,7 +235,7 @@
         </div>
         <div class="botones">
             <button type="submit" name="agregar">➕ Agregar Estudiante</button>
-            <a href="ver_estudiantes.php" class="boton">📋 Ver Estudiantes</a>
+            <a href="ver_estudiante.php" class="boton">📋 Ver Estudiantes</a>
             <a href="pagina_administrador.php" class="boton">🏠 Panel Admin</a>
         </div>
     </form>

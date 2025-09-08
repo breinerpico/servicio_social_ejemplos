@@ -187,7 +187,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['agregar'])) {
         </div>
         <div class="botones">
             <button type="submit" name="agregar">➕ Agregar Acudiente</button>
-            <a href="ver_acudientes.php" class="boton">📋 Ver Acudientes</a>
+            <a href="ver_acudiente.php" class="boton">📋 Ver Acudientes</a>
             <a href="pagina_administrador.php" class="boton">🏠 Panel Admin</a>
         </div>
     </form>

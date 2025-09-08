@@ -62,7 +62,16 @@
       background: #357ABD;
       transform: scale(1.05);
     }
+    
+    .home-btn {
+      width: 60%;             
+      background: #27ae60;     
+    }
 
+    .home-btn:hover {
+      background: #1e8449;    
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -86,6 +95,12 @@
     <a href="login_supervisor.php" class="role-btn">
       <img src="img/supervisor.png" alt="Supervisor"> Supervisor
     </a>
+
+    <h3>
+      <a href="index.php" class="role-btn home-btn">
+        <img src="img/home.png" alt="Inicio"> Inicio
+      </a>
+    </h3>
   </div>
 
 </body>

@@ -103,9 +103,11 @@
   <div class="contenido">
     <h1>Bienvenido a Servicio Social</h1>
     <p>
-      use el menu superior donde estaran diferentes secciones donde cada una nos dara un poco de información acerca del servisio social
+      use el menu superior en el cual se encontraran diferentes secciones donde cada una nos dara un poco de información acerca del servisio social
     </p>
-
+<center>
+    <img src="img/servicio_social.png" alt="servicio social" width="">
+<center/>
     <!-- Secciones de información -->
     <div id="presentacion" class="seccion">
       <h2>Presentación</h2>

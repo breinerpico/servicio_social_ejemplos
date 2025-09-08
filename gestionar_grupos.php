@@ -183,7 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['agregar'])) {
         </div>
         <div class="botones">
             <button type="submit" name="agregar">➕ Agregar Grupo</button>
-            <a href="ver_grupos.php" class="boton">📋 Ver Grupos</a>
+            <a href="ver_grupo.php" class="boton">📋 Ver Grupos</a>
             <a href="pagina_administrador.php" class="boton">🏠 Panel Admin</a>
         </div>
     </form>
