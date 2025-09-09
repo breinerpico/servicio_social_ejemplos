@@ -54,7 +54,7 @@
     .contenido {
       max-width: 900px;
       margin: 40px auto;
-      background: white;
+      background:rgb(192, 155, 235);
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.15);
@@ -68,7 +68,7 @@
     p {
       line-height: 1.6;
       font-size: 18px;
-      color: #555;
+      color: #black;
     }
 
     /* Espacio entre secciones */
@@ -82,20 +82,20 @@
   <!-- Barra superior -->
   <div class="navbar">
     <a href="#presentacion">
-      <img src="img/" alt=""> presentación
+      <img src="img/presentacion.png" alt=""> presentación
     </a>
     <a href="#objetivos">
-      <img src="img/" alt=""> Objetivos
+      <img src="img/objetivos.jpeg" alt=""> Objetivos
     </a>
     <a href="#justificacion">
-      <img src="img/" alt=""> justificacion
+      <img src="img/justificacion.png" alt=""> justificacion
     </a>
     <a href="#requisitos">
-      <img src="img/" alt=""> requisitos
+      <img src="img/requisitos.png" alt=""> requisitos
     </a>
 
     <a href="inicio_sesion.php">
-      <img src="img/login.png" alt="Login"> Iniciar Sesión
+      <img src="img/inicioSesion.png" alt="Login"> Iniciar Sesión
     </a>
   </div>
 
@@ -106,7 +106,7 @@
       use el menu superior en el cual se encontraran diferentes secciones donde cada una nos dara un poco de información acerca del servisio social
     </p>
 <center>
-    <img src="img/servicio_social.png" alt="servicio social" width="">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5zNUTgb6rXk?si=HXdgx6ecJRNkNu_7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <center/>
     <!-- Secciones de información -->
     <div id="presentacion" class="seccion">

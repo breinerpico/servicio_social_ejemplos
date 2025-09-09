@@ -25,7 +25,7 @@ if (isset($_SESSION['username'])) {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Portal Acudientes</title>
     <style>
@@ -100,7 +100,7 @@ if (isset($_SESSION['username'])) {
         <a href="#">Inicio</a>
         <a href="#">Progreso de mi hijo</a>
         <a href="#">Horas de Servicio</a>
-        <a href="modelo/cerrar_sesion.php" class="logout">Cerrar Sesión</a>
+        <a href="modelo/inicio_sesion.php" class="logout">Cerrar Sesión</a>
 
     </div>
 

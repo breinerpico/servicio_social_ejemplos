@@ -22,7 +22,7 @@ if(isset($_SESSION['username'])) {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-        <link rel="stylesheet" href="style.css">
+         <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Panel Administrador</title>
   <style>

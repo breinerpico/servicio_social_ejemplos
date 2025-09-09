@@ -79,7 +79,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-        <link rel="stylesheet" href="style.css">
+          <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Agregar Estudiante</title>
     <style>
@@ -234,7 +234,7 @@
             </select>
         </div>
         <div class="botones">
-            <button type="submit" name="agregar">➕ Agregar Estudiante</button>
+            <button type="submit" name="agregar_estudiante.php">➕ Agregar Estudiante</button>
             <a href="ver_estudiante.php" class="boton">📋 Ver Estudiantes</a>
             <a href="pagina_administrador.php" class="boton">🏠 Panel Admin</a>
         </div>

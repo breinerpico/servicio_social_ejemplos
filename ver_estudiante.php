@@ -87,7 +87,8 @@ $resultado_estudiantes = mysqli_query($conexion, $query_estudiantes);
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Lista de Estudiantes</title>
   <style>
     body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 20px; }

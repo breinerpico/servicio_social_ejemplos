@@ -91,7 +91,8 @@ $resultado_administradores = mysqli_query($conexion, $query_administradores);
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Lista de Administradores</title>
   <style>
     body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 20px; }

@@ -81,7 +81,7 @@
     <h3>Inicio de Sesión</h3>
 
     <a href="login_admin.php" class="role-btn">
-      <img src="img/admin.png" alt="Admin"> Administrador
+      <img src="img/administrador.png" alt="Admin"> Administrador
     </a>
 
     <a href="login_acudiente.php" class="role-btn">
@@ -98,7 +98,7 @@
 
     <h3>
       <a href="index.php" class="role-btn home-btn">
-        <img src="img/home.png" alt="Inicio"> Inicio
+        <img src="img/inicio.webp" alt="Inicio"> Inicio
       </a>
     </h3>
   </div>

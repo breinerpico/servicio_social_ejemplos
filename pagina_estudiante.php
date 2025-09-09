@@ -94,7 +94,7 @@ else
         <a href="#">Mis Horas de Servicio</a>
         <a href="#">Enviar Solicitudes</a>
         <a href="#">Estado de Solicitudes</a>
-        <a href="modelo/cerrar_sesion.php" class="logout">Cerrar Sesión</a>
+        <a href="modelo/inicio_sesion.php" class="logout">Cerrar Sesión</a>
     </div>
 
     <!-- Contenido -->
