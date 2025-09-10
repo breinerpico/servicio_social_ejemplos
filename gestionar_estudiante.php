@@ -1,85 +1,91 @@
 <?php
-    require 'modelo/conexion.php';
+require 'modelo/conexion.php';
 
-    session_start();
+session_start();
 
-    // Verificar si existe una sesión de administrador
-    if(!isset($_SESSION['username']))
-    {
-        header("location: index.php");
-        exit();
-    }
+// Verificar si existe una sesión de administrador
+if(!isset($_SESSION['username'])) {
+    header("location: index.php");
+    exit();
+}
 
-    $nombre_usuario = $_SESSION['username'];
-    
-    // Obtener datos del administrador
-    $query = "SELECT nombre, apellidos FROM administrador WHERE correo = '$nombre_usuario'";
-    $resultado = mysqli_query($conexion, $query);
-    $datos = mysqli_fetch_array($resultado);
+$nombre_usuario = $_SESSION['username'];
 
-    // Inicializar variables
-    $mensaje = '';
+// Obtener datos del administrador
+$query = "SELECT nombre, apellidos FROM administrador WHERE correo = '$nombre_usuario'";
+$resultado = mysqli_query($conexion, $query);
+$datos = mysqli_fetch_array($resultado);
 
-    // Obtener lista de acudientes para el formulario
-    $query_acudientes = "SELECT id_acudiente, nombre, apellidos FROM acudiente ORDER BY nombre, apellidos";
-    $resultado_acudientes = mysqli_query($conexion, $query_acudientes);
+// Inicializar mensaje
+$mensaje = '';
 
-    // Obtener lista de grupos para el formulario
-    $query_grupos = "SELECT g.id_grupo, g.nombre, gr.nombre as nombre_grado 
-                     FROM grupo g 
-                     LEFT JOIN grado gr ON g.id_grado = gr.id_grado 
-                     ORDER BY g.nombre";
-    $resultado_grupos = mysqli_query($conexion, $query_grupos);
+// Obtener lista de acudientes
+$query_acudientes = "SELECT id_acudiente, nombre, apellidos FROM acudiente ORDER BY nombre, apellidos";
+$resultado_acudientes = mysqli_query($conexion, $query_acudientes);
 
-    // Procesar formulario de agregar
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['agregar'])) {
-        $nombre = mysqli_real_escape_string($conexion, $_POST['nombre']);
-        $apellidos = mysqli_real_escape_string($conexion, $_POST['apellidos']);
-        $doc_identidad = mysqli_real_escape_string($conexion, $_POST['doc_identidad']);
-        $telefono = mysqli_real_escape_string($conexion, $_POST['telefono']);
-        $correo = mysqli_real_escape_string($conexion, $_POST['correo']);
-        $contrasena = mysqli_real_escape_string($conexion, $_POST['contrasena']);
-        $id_acudiente = mysqli_real_escape_string($conexion, $_POST['id_acudiente']);
-        $id_grupo = mysqli_real_escape_string($conexion, $_POST['id_grupo']);
+// Obtener lista de grupos
+$query_grupos = "SELECT g.id_grupo, g.nombre, gr.nombre as nombre_grado 
+                 FROM grupo g 
+                 LEFT JOIN grado gr ON g.id_grado = gr.id_grado 
+                 ORDER BY g.nombre";
+$resultado_grupos = mysqli_query($conexion, $query_grupos);
 
-        // Validar que se haya seleccionado un grupo
-        if (empty($id_grupo)) {
-            $mensaje = "Debe seleccionar un grupo.";
+// Procesar formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['agregar'])) {
+    $nombre = mysqli_real_escape_string($conexion, $_POST['nombre']);
+    $apellidos = mysqli_real_escape_string($conexion, $_POST['apellidos']);
+    $doc_identidad = mysqli_real_escape_string($conexion, $_POST['doc_identidad']);
+    $telefono = mysqli_real_escape_string($conexion, $_POST['telefono']);
+    $correo = mysqli_real_escape_string($conexion, $_POST['correo']);
+    $raw_pass = $_POST['contrasena'];
+    $contrasena = password_hash($raw_pass, PASSWORD_BCRYPT); // Contraseña encriptada
+    $id_acudiente = mysqli_real_escape_string($conexion, $_POST['id_acudiente']);
+    $id_grupo = mysqli_real_escape_string($conexion, $_POST['id_grupo']);
+
+    // Validar grupo seleccionado
+    if (empty($id_grupo)) {
+        $mensaje = "❌ Debe seleccionar un grupo.";
+    } else {
+        // Validar correo duplicado
+        $verificar = "SELECT * FROM estudiante WHERE correo = '$correo'";
+        $resultado_verificar = mysqli_query($conexion, $verificar);
+
+        if (mysqli_num_rows($resultado_verificar) > 0) {
+            $mensaje = "❌ El correo electrónico ya está registrado.";
         } else {
-            // Verificar si el correo ya existe
-            $verificar = "SELECT * FROM estudiante WHERE correo = '$correo'";
-            $resultado_verificar = mysqli_query($conexion, $verificar);
+            // Validar documento duplicado (opcional)
+            $verificar_doc = "SELECT * FROM estudiante WHERE doc_identidad = '$doc_identidad'";
+            $resultado_verificar_doc = mysqli_query($conexion, $verificar_doc);
 
-            if (mysqli_num_rows($resultado_verificar) > 0) {
-                $mensaje = "El correo electrónico ya está registrado";
+            if (mysqli_num_rows($resultado_verificar_doc) > 0) {
+                $mensaje = "❌ El documento de identidad ya está registrado.";
             } else {
-                // Insertamos el nuevo estudiante
+                // Insertar estudiante
                 $insertar = "INSERT INTO estudiante (nombre, apellidos, doc_identidad, telefono, correo, contraseña, id_acudiente) 
                              VALUES ('$nombre', '$apellidos', '$doc_identidad', '$telefono', '$correo', '$contrasena', '$id_acudiente')";
 
                 if (mysqli_query($conexion, $insertar)) {
-                    // Obtener el ID del estudiante recién insertado
                     $id_estudiante = mysqli_insert_id($conexion);
+                    $ano_actual = date('Y-m-d');
 
-                   // Insertar en la tabla grupo_estudiante con el año actual
-                    $ano_actual = date('Y');
                     $insertar_grupo = "INSERT INTO grupo_estudiante (id_grupo, año, id_estudiante) 
                                        VALUES ('$id_grupo', '$ano_actual', '$id_estudiante')";
                     mysqli_query($conexion, $insertar_grupo);
 
-                    $mensaje = "✅ Estudiante registrado correctamente";
+                    $mensaje = "✅ Estudiante registrado correctamente.";
                 } else {
-                    $mensaje = "❌ Error al registrar el estudiante";
+                    $mensaje = "❌ Error al registrar el estudiante.";
                 }
             }
         }
     }
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-          <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Agregar Estudiante</title>
     <style>
@@ -224,7 +230,7 @@
         </div>
         <div>
             <label for="id_grupo">Grupo:</label>
-            <select id="id_grupo" name="id_grupo">
+            <select id="id_grupo" name="id_grupo" required>
                 <option value="">Seleccione un grupo</option>
                 <?php while($grupo = mysqli_fetch_assoc($resultado_grupos)): ?>
                     <option value="<?php echo $grupo['id_grupo']; ?>">
@@ -234,7 +240,7 @@
             </select>
         </div>
         <div class="botones">
-            <button type="submit" name="agregar_estudiante.php">➕ Agregar Estudiante</button>
+            <button type="submit" name="agregar">➕ Agregar Estudiante</button>
             <a href="ver_estudiante.php" class="boton">📋 Ver Estudiantes</a>
             <a href="pagina_administrador.php" class="boton">🏠 Panel Admin</a>
         </div>

@@ -100,13 +100,16 @@ if(isset($_SESSION['username'])) {
 </head>
 <body>
   <!-- Sidebar -->
-  <div class="sidebar">
-    <h2>Menú Admin</h2>
-    <a href="gestionar_estudiente.php">Gestionar Estudiantes</a>
-    <a href="gestionar_grupo.php">Gestionar Grupos</a>
-    <a href="#">Soporte PDF</a>
-    <a href="modelo/inicio_sesion.php" class="logout">Cerrar Sesión</a>
-  </div>
+<!-- Sidebar -->
+<div class="sidebar">
+  <h2>Menú Admin</h2>
+  <a href="gestionar_estudiante.php">Gestionar Estudiante a Cargo</a>
+  <a href="validar_horas.php">Validar Horas de Servicio</a>
+  <a href="registrar_actividades.php">Registrar Actividades</a>
+  <a href="comunicacion_acudiente.php">Comunicación con el Acudiente</a>
+  <a href="modelo/inicio_sesion.php" class="logout">Cerrar Sesión</a>
+</div>
+
 
   <!-- Contenido principal -->
   <div class="content">
